@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Log In</title>
+    <style>
+        body{
+            background-color: #fafafa;
+            font-family: sans-serif;
+            font-size: 13px;
+        }
+        #all{
+            margin: auto;
+            text-align: center;
+        }
+        #log-in-part{
+            max-width: 350px;
+            float: right;
+            margin: 60px 20% 0px 0px ;
+        }
+        #photo{
+            margin-left: 20%;
+        }
+        .common{
+            border:solid;
+            border-width: 1.5px;
+            border-color: #eae8e8;
+            background-color: white;
+        }
+        input{
+            width: 270px;
+            height: 30px;
+            margin: 5px;
+            border-width: 0.5px;
+            border-color: #f5f5f5;
+            background-color:#f8f8f8;
+            border-radius: 3px;
+            padding: 5px;
+            color:#eae8e8
+        }
+        #in-button{
+            width:280px;
+            padding: 5px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            height: 35px;
+            font-family:  sans-serif;
+            font-size: 15px;
+            color: white;
+            background-color: #67b6fa;
+        }
+        a{
+            text-decoration: none;
+        }
+        .facebook-in{
+            font-size: 1.1em;
+            color: #3d5489;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px;
+        }
+        #fogget-password{
+            font-size: 0.9em;
+            color: #3a486a;
+        }
+        #fgdiv{
+            margin: 11px;
+        }
+        #main-part{
+            margin-bottom: 10px;
+        }
+        #additional{
+            padding: 20px;
+        }
+        #new-acc{
+            color: #0095f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <img id="photo" alt="phone with instagram" src="instagram-phone.png" width="400">
+        <div id="log-in-part">
+            <div id="main-part" class="common">
+                <img alt="instagram" src="instagram-logo.png" width="250">
+                <div><input type="text" placeholder="Телефон, имя пользователя или эл. адрес"></div>
+                <div><input type="password" placeholder="Пароль"></div>
+                <button id="in-button">Войти</button>
+                <h3 style="color:#d9d9d9;">или</h3>
+                <div class="facebook-in">
+                    <a href="" class="facebook-in">Войти через Facebook</a>
+                </div>
+                <div id="fgdiv">
+                    <a href="" id="fogget-password">Забыли пароль?</a>
+                </div>
+            </div>
+            <div id="additional" class="common">
+                У вас ещё нет аккаунта? <a href="" id="new-acc">Зарегистрироваться</a>
+
+            </div>
+        </div>
+        <p style="color: #ababab;">
+            © 2023 Instagram from Meta</p>
+    </div>
+    
+</body>
+</html>
