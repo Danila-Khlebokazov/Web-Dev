@@ -22,12 +22,15 @@
         }
         #photo{
             margin-left: 20%;
+            outline: 10px solid #fafafa;
+            outline-offset: -10px ;
         }
         .common{
             border:solid;
             border-width: 1.5px;
             border-color: #eae8e8;
             background-color: white;
+            text-align: center;
         }
         input{
             width: 270px;
@@ -59,7 +62,7 @@
             color: #3d5489;
             font-weight: bold;
             padding: 10px;
-            margin: 10px;
+            margin: 0px 10px;
         }
         #fogget-password{
             font-size: 0.9em;
@@ -70,6 +73,7 @@
         }
         #main-part{
             margin-bottom: 10px;
+            align-items: center;
         }
         #additional{
             padding: 20px;
@@ -78,27 +82,45 @@
             color: #0095f6;
             font-weight: bold;
         }
+        #inst-logo{
+            margin: 30px 0px 20px 0px;
+        }
+        #main-main-part{
+            border-bottom: solid #d9d9d9;
+            width: 90%;
+            margin: auto;
+            padding-bottom: 30px;
+        }
+        #or-h3{
+            position: relative;
+            top: -10px;
+            background-color: white;
+            width: 20%;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
     <div id="all">
-        <img id="photo" alt="phone with instagram" src="instagram-phone.png" width="400">
+        <img id="photo" alt="phone with instagram" src="inst.gif" width="400">
         <div id="log-in-part">
             <div id="main-part" class="common">
-                <img alt="instagram" src="instagram-logo.png" width="250">
-                <div><input type="text" placeholder="Телефон, имя пользователя или эл. адрес"></div>
-                <div><input type="password" placeholder="Пароль"></div>
-                <button id="in-button">Войти</button>
-                <h3 style="color:#d9d9d9;">или</h3>
+                <div id="main-main-part">
+                    <img id="inst-logo" alt="instagram" src="instagram-logo.png" width="200">
+                    <div><input type="text" placeholder="Телефон, имя пользователя или эл. адрес"></div>
+                    <div><input type="password" placeholder="Пароль"></div>
+                    <button id="in-button">Войти</button>
+                </div>
+                <h3 id="or-h3" style="color:#d9d9d9;">или</h3>
                 <div class="facebook-in">
-                    <a href="" class="facebook-in">Войти через Facebook</a>
+                    <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%252214ek6t9rilnrtnggqibqf80vellsezo1vcdzcj1dj3aqa4u82oo%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Dru_RU%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dde2acaab-f14f-472f-9cf4-a70ff717fcc4%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%252214ek6t9rilnrtnggqibqf80vellsezo1vcdzcj1dj3aqa4u82oo%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=ru_RU&pl_dbl=0" class="facebook-in"><img style="position:relative; top: 7px;" src="facebook-icon.png" width="25px">Войти через Facebook</a>
                 </div>
                 <div id="fgdiv">
-                    <a href="" id="fogget-password">Забыли пароль?</a>
+                    <a href="https://www.instagram.com/accounts/password/reset/" id="fogget-password">Забыли пароль?</a>
                 </div>
             </div>
             <div id="additional" class="common">
-                У вас ещё нет аккаунта? <a href="" id="new-acc">Зарегистрироваться</a>
+                У вас ещё нет аккаунта? <a href="https://www.instagram.com/accounts/emailsignup/" id="new-acc">Зарегистрироваться</a>
 
             </div>
         </div>
