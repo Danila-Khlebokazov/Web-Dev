@@ -1,0 +1,31 @@
+header{
+    padding: 10px 0px 10px 40px;
+    background-color: #232323;
+    color: gray;
+    font-size: 20px;
+}
+
+body{
+    font-family: sans-serif;
+    margin: 0px;
+}
+h1{
+    font-weight: 100;
+    padding: 10px 0px 10px 100px;
+}
+
+#adding-block{
+    text-align: center;
+}
+#main-input{
+    width: 500px;
+    height: 25px;
+    margin: 10px;
+}
+#add-button{
+    height: 25px;
+    background-color:#347ab8;
+    color: white;
+    border: none;
+    margin: auto;
+}
