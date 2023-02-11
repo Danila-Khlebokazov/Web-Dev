@@ -23,9 +23,19 @@ h1{
     margin: 10px;
 }
 #add-button{
-    height: 25px;
+    height: 30px;
+    width: 50px;
     background-color:#347ab8;
     color: white;
     border: none;
-    margin: auto;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+#add-button:hover{
+    background-color: #5388b7;
+    cursor: pointer;
+}
+
+#toDo-list-block{
+    text-align: center;
 }
