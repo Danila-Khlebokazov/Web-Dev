@@ -37,5 +37,28 @@ h1{
 }
 
 #toDo-list-block{
-    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    padding: 40px 10px 10px 10px;
+}
+
+.toDo-task{
+    padding: 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.delete-button{
+    color: red;
+    border: none;
+    background-color: white;
+    margin-left: 70%;
+    height: 20px;
+}
+.delete-button:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
