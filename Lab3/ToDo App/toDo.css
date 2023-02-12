@@ -47,6 +47,7 @@ h1{
     border: solid;
     border-width: 1px;
     border-color: gray;
+    margin: 2px;
 }
 
 .delete-button{
