@@ -54,8 +54,8 @@ h1{
     color: red;
     border: none;
     background-color: white;
-    margin-left: 70%;
     height: 20px;
+    float: right;
 }
 .delete-button:hover{
     background-color: red;
