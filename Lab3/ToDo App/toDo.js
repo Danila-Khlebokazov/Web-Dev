@@ -28,6 +28,11 @@ function render(todo){
     const list = document.querySelector("#toDo-list-block");
     const prevItem = document.querySelector(`[data-key='${todo.id}']`);
 
+    if(todo.deleted){
+        prevItem.remove();
+        return;
+    }
+
     const isChecked = todo.done ? 'done': '';
 
     const node = document.createElement("div");
@@ -55,10 +60,25 @@ list.addEventListener("click", event => {
         const itemKey = event.target.parentElement.dataset.key;
         toggleDone(itemKey);
     }
+
+    if (event.target.classList.contains('delete-button')) {
+        const itemKey = event.target.parentElement.dataset.key;
+        deleteTodo(itemKey);
+    }
 })
 
 function toggleDone(key) {
     const index = toDoItems.findIndex(item => item.id === Number(key));
     toDoItems[index].done = !toDoItems[index].done;
     render(toDoItems[index]);
+}
+
+function deleteTodo(key){
+    const index = toDoItems.findIndex(item => item.id === Number(key));
+    const todo = {
+        deleted: true,
+        ...toDoItems[index]
+    };
+    toDoItems = toDoItems.filter(item => item.id !== Number(key));
+    render(todo);
 }
