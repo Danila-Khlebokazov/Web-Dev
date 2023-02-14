@@ -1,14 +1,13 @@
-var todos = [];
+
 document.querySelector('#add-button').onclick = function(){
     if(document.querySelector('#main-input').value.length == 0){
         alert("Please Enter a Task")
     }
     else{
-        todos.append(document.querySelector('#main-input').value);
         document.querySelector('#toDo-list-block').innerHTML += `
             <div class="toDo-task"> 
                 <input type="checkbox" id="check" class="checkbox-task"> 
-                <span id="${todos.indexOf(todos.append(document.querySelector('#main-input').value))}">
+                <span id="">
                 ${document.querySelector('#main-input').value}
                 </span>
                 <button class="delete-button">Delete</button>
