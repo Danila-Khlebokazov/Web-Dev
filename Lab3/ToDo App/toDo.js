@@ -26,6 +26,7 @@ addButton.onclick = function() {
 
 function render(todo){
     const list = document.querySelector("#toDo-list-block");
+    const prevItem = document.querySelector(`[data-key='${todo.id}']`);
 
     const isChecked = todo.done ? 'done': '';
 
@@ -34,20 +35,24 @@ function render(todo){
     node.setAttribute('class', `toDo-task ${isChecked}`);
     node.setAttribute('data-key', todo.id);
     node.innerHTML = `
-            <input type="checkbox" id="${todo.id}" class="checkbox-task"> 
+            <input type="checkbox" id="${todo.id}" class="checkbox-task" ${todo.done ? "checked" : ""}> 
             <span id="">
             ${todo.text}
             </span>
             <button class="delete-button">Delete</button>
         `
-    list.append(node);
+
+    if(prevItem){
+        list.replaceChild(node, prevItem)
+    }else{
+        list.append(node);
+    }
 }
 
 const list = document.querySelector("#toDo-list-block");
 list.addEventListener("click", event => {
     if (event.target.classList.contains("checkbox-task")){
         const itemKey = event.target.parentElement.dataset.key;
-        console.log(itemKey);
         toggleDone(itemKey);
     }
 })
