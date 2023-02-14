@@ -25,6 +25,7 @@ addButton.onclick = function() {
 }
 
 function render(todo){
+    localStorage.setItem('todoItems', JSON.stringify(toDoItems));
     const list = document.querySelector("#toDo-list-block");
     const prevItem = document.querySelector(`[data-key='${todo.id}']`);
 
@@ -82,3 +83,13 @@ function deleteTodo(key){
     toDoItems = toDoItems.filter(item => item.id !== Number(key));
     render(todo);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ref = localStorage.getItem('todoItems');
+    if (ref) {
+      toDoItems = JSON.parse(ref);
+      toDoItems.forEach(t => {
+        render(t);
+      });
+    }
+  });
