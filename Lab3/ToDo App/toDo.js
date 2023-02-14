@@ -31,16 +31,14 @@ function render(todo){
 
     const node = document.createElement("div");
 
-    node.setAttribute('class', `todo-item ${isChecked}`);
+    node.setAttribute('class', `toDo-task ${isChecked}`);
     node.setAttribute('data-key', todo.id);
     node.innerHTML = `
-            <div class="toDo-task"> 
-                <input type="checkbox" id="${todo.id}" class="checkbox-task value = true"> 
-                <span id="">
-                ${todo.text}
-                </span>
-                <button class="delete-button">Delete</button>
-            </div>
+            <input type="checkbox" id="${todo.id}" class="checkbox-task"> 
+            <span id="">
+            ${todo.text}
+            </span>
+            <button class="delete-button">Delete</button>
         `
     list.append(node);
 }
@@ -57,5 +55,5 @@ list.addEventListener("click", event => {
 function toggleDone(key) {
     const index = toDoItems.findIndex(item => item.id === Number(key));
     toDoItems[index].done = !toDoItems[index].done;
-    renderTodo(toDoItems[index]);
+    render(toDoItems[index]);
 }
