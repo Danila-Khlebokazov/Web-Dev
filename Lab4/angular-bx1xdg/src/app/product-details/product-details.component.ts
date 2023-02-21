@@ -28,5 +28,10 @@ export class ProductDetailsComponent implements OnInit{
     window.alert('Your product has been added to the cart!');
   }
 
+  goToLink(product: Product){
+  window.location.href = product.urlLink;
+  }
+
+
 }
 

@@ -1,0 +1,11 @@
+<div class="slideshow-container">
+    <div *ngFor="let image of product.imageCollection; let i = index">
+        <img *ngIf="i === currentSlide" class="slide" src="/assets/{{image}}">
+    </div>
+    <button class="control prev" (click)="onPreviousClick()">
+        <
+    </button>
+    <button class="control next" (click)="onNextClick()">
+        >
+    </button>
+</div>
