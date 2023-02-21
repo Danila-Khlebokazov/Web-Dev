@@ -3,18 +3,23 @@
 <div *ngFor="let product of products">
 
     <h3>
+        <img height="100px" src="/assets/{{product.imageCollection[0]}}">
         <a [title]="product.name + ' details'"
            [routerLink]="['/products', product.id]">
             {{product.name}}</a>
     </h3>
+    <span style="color: #c09a04;">Rating: {{product.rating}}/5</span>
 
     <p *ngIf="product.description">
         Description: {{ product.description }}
     </p>
 
-    <button type="button" (click)="share()">
-        Share
-    </button>
+    <a href=
+               "whatsapp://send?text= There is a link: product.urlLink"
+       data-action="share/whatsapp/share"
+       target="_blank">
+        Share to whatsapp
+    </a>
 
     <app-product-alerts
             [product]="product"
