@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit{
   }
 
   goToLink(product: Product){
-  window.location.href = product.urlLink;
+  window.open(product.urlLink, "_blank");
   }
 
 
