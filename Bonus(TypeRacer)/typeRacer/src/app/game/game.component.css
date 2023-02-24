@@ -1,0 +1,73 @@
+
+.start_button{
+  background-color: coral;
+  border: none;
+  border-radius: 5px;
+  color: aliceblue;
+  font-size: 40px;
+  margin:40px;
+}
+.start_button:hover{
+  background-color: #ef6633;
+  font-size: 45px;
+  transition-duration: 50ms;
+}
+
+.text_place{
+  background-color: aliceblue;
+  max-width: 1200px;
+  border-radius: 20px;
+  padding: 20px;
+  margin: auto;
+  color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 200px;
+  text-align: left;
+  left: 15%;
+  right: 15%;
+}
+.fake_text_place{
+  max-width: 1200px;
+  border-radius: 20px;
+  padding: 20px;
+  margin: auto;
+  color: black;
+  font-size: 40px;
+  position: absolute;
+  top: 200px;
+  text-align: left;
+  left: 15%;
+  right: 15%;
+}
+
+.road{
+  background-color: black;
+  width: 60%;
+  height: 5px;
+  margin: auto;
+}
+.car{
+}
+#secret{
+  color: white;
+}
+
+.letter{
+  color: gray;
+}
+.letter_correct{
+  color: chartreuse;
+}
+.letter_false{
+  color: crimson;
+  text-decoration: underline;
+}
+
+
+.hidden{
+  height: 1px;
+  width: 1px;
+}
+
+

@@ -1,0 +1,32 @@
+
+
+<button *ngIf="!start" (click)="startGame()" class="start_button">Start</button>
+
+<div *ngIf="start" class="game_block">
+  <h3>Game</h3>
+  <button (click)="stopGame()">Stop</button>
+  <div style="text-align: left; margin-left: 20%">
+    <span id="secret">{{input_text}}</span>
+    <img class="car" src="favicon.ico">
+  </div>
+  <div class="road"></div>
+
+  <div class="text_place">
+<!--  <span class="word_active" *ngFor="let word of current_text.split(' ')">-->
+<!--    <span *ngFor="let letter of word.split('')">-->
+<!--      {{letter}}-->
+<!--    </span>-->
+<!--  </span>-->
+    <span class="letter">{{current_text}}</span>
+  </div>
+  <div class="fake_text_place">
+    <span *ngFor="let letter of input_text.split('');let i = index">
+      <span [class.letter_correct]="(letter == current_text.charAt(i))"
+            [class.letter_false]="!(letter == current_text.charAt(i))">{{current_text.charAt(i)}}</span>
+    </span>
+  </div>
+  <div><input id="input" [(ngModel)]="input_text" class="hidden" type="text" autofocus></div>
+
+</div>
+
+
