@@ -5,8 +5,10 @@
             [product]="product">
     </app-image-selector>
     <h3>{{ product.name }}</h3>
+    <span>Likes: {{product.likes}}</span>
     <h4>{{ product.price | currency:'₸' }}</h4>
     <p>{{ product.description }}</p>
     <button type="button" (click)="addToCart(product)">Buy</button>
     <button class="kaspi-button" type="button" (click)="goToLink(product)">See in kaspi</button>
+    <button style="margin-left: 30px" type="button" (click)="giveLike(product)">Like</button>
 </div>

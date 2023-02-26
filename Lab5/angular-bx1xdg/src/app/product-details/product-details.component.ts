@@ -32,6 +32,10 @@ export class ProductDetailsComponent implements OnInit{
   window.open(product.urlLink, "_blank");
   }
 
+  giveLike(product: Product){
+    product.likes += 1
+  }
+
 
 
 }
