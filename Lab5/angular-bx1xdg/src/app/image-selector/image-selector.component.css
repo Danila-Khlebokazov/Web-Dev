@@ -1,0 +1,18 @@
+.slideshow-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5em;
+    text-align: center;
+}
+.slide {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+    border-radius: 0.5em;
+    margin: auto;
+}
+.slide:hover {
+    transform: scale(1.025);
+}

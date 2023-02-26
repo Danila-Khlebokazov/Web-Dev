@@ -1,0 +1,11 @@
+.category_button{
+    background-color: #BDBDBD;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+
+.current{
+    background-color: #1976d2;
+}

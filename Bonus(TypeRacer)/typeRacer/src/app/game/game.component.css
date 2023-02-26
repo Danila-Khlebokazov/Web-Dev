@@ -22,7 +22,7 @@
   color: black;
   font-size: 40px;
   position: absolute;
-  top: 200px;
+  top: 250px;
   text-align: left;
   left: 15%;
   right: 15%;
@@ -35,7 +35,7 @@
   color: black;
   font-size: 40px;
   position: absolute;
-  top: 200px;
+  top: 250px;
   text-align: left;
   left: 15%;
   right: 15%;
@@ -43,11 +43,15 @@
 
 .road{
   background-color: black;
-  width: 60%;
   height: 5px;
-  margin: auto;
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 30%;
 }
 .car{
+  position: absolute;
+  top: 25%;
 }
 #secret{
   color: white;
@@ -66,8 +70,9 @@
 
 
 .hidden{
-  height: 1px;
-  width: 1px;
+  height: 20px;
+  width: 100px;
+  margin: 10px;
 }
 
 
