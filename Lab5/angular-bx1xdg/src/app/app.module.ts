@@ -21,7 +21,7 @@ import { CategotyListComponent } from './categoty-list/categoty-list.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: CategotyListComponent},
-      { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: ':categoryName/products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
     ])
