@@ -26,6 +26,11 @@ export class AlbumsComponent implements OnInit{
     })
   }
 
+  deleteAlbum(album: Album){
+    this.albums = this.albums.filter(al => al !== album)
+  }
+
+
   addAlbum(){
     this.albumService.addAlbum(this.newAlbum).subscribe((album) =>{
       this.albums.unshift(album);
