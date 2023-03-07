@@ -11,9 +11,12 @@ export class AlbumsComponent implements OnInit{
   albums: Album[]
   newAlbum: Album
 
+  changeble: Album
+
   constructor(private albumService: AlbumService) {
     this.albums = []
     this.newAlbum= {} as Album
+    this.changeble = {} as Album;
   }
 
   ngOnInit(): void {
@@ -28,6 +31,10 @@ export class AlbumsComponent implements OnInit{
 
   deleteAlbum(album: Album){
     this.albums = this.albums.filter(al => al !== album)
+  }
+
+  updateAlbum(album: Album){
+  this.changeble = album;
   }
 
 

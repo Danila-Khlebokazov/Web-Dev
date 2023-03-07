@@ -10,6 +10,9 @@
     <a routerLink="/albums/{{album.id}}">
       {{album.id}}) {{album.title}}
     </a>
+    <button *ngIf="changeble !== album" (click)="updateAlbum(album)">Change</button>
+    <input *ngIf="changeble === album" type="text" [(ngModel)]="album.title">
+    <button *ngIf="changeble === album" (click)="updateAlbum(newAlbum)">Ok</button>
     <button (click)="deleteAlbum(album)">Delete</button>
   </li>
 </ul>
