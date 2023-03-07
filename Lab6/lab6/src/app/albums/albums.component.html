@@ -2,7 +2,7 @@
 
 <fieldset>
   <input type="text" [(ngModel)]="newAlbum.title"><br/>
-  <button (click)="addAlbum()">Add album</button>
+  <button class="save-button" (click)="addAlbum()">Add album</button>
 </fieldset>
 
 <ul>
@@ -10,9 +10,10 @@
     <a routerLink="/albums/{{album.id}}">
       {{album.id}}) {{album.title}}
     </a>
-    <button *ngIf="changeble !== album" (click)="updateAlbum(album)">Change</button>
+    <button class="change-button" *ngIf="changeble !== album" (click)="updateAlbum(album)">Change</button>
     <input *ngIf="changeble === album" type="text" [(ngModel)]="album.title">
-    <button *ngIf="changeble === album" (click)="updateAlbum(newAlbum)">Ok</button>
-    <button (click)="deleteAlbum(album)">Delete</button>
+    <button class="save-button" *ngIf="changeble === album" (click)="updateAlbum(newAlbum)">Ok</button>
+    <button class="delete-button" (click)="deleteAlbum(album)">Delete</button>
+    <hr>
   </li>
 </ul>

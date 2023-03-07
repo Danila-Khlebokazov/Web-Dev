@@ -1,0 +1,16 @@
+ul{
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  list-style-type: disc;
+  color: white;
+}
+li{
+  padding: 10px;
+  margin: 10px;
+}
+
+a{
+  color: white;
+}

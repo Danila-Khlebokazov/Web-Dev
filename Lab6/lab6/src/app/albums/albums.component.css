@@ -1,0 +1,45 @@
+ul{
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+
+li{
+  height: 50px;
+}
+
+input{
+  width: 400px;
+  height: 20px;
+}
+
+.save-button, .delete-button{
+  background-color: #5dab11;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 5px;
+}
+
+.delete-button{
+  background-color: crimson;
+  float: right;
+}
+
+.change-button{
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+hr{
+  height: 1px;
+  color: black;
+  background-color: black;
+  margin: 5px;
+}
+
+a{
+  color: black;
+}
