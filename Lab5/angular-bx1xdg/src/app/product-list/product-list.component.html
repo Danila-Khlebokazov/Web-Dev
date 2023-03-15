@@ -1,5 +1,5 @@
 
-<div *ngFor="let product of category.products">
+<div *ngFor="let product of category.products.concat(adCategory.products)">
 
     <h3>
         <img height="100px" src="/assets/{{product.imageCollection[0]}}">

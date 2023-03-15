@@ -10,6 +10,7 @@ import {Category} from "../categories";
 })
 export class ProductListComponent {
   @Input() category!: Category
+  @Input() adCategory!: Category
 
   share() {
     window.alert('The product has been shared!');

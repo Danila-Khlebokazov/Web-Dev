@@ -11,8 +11,19 @@ export class CategotyListComponent {
 
   currentCategory = categories[0];
 
+  adCategory: Category = {name: "", products: []};
+
   changeCategory(cat : Category){
     this.currentCategory = cat
+    if(this.currentCategory.name == 'smart-watches'){
+      this.adCategory = categories[3]
+    }
+    else if(this.currentCategory.name == 'audio-systems'){
+      this.adCategory = categories[2]
+    }
+    else{
+      this.adCategory = {name: "", products: []};
+    }
   }
 
 
