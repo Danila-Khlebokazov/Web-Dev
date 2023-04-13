@@ -62,11 +62,7 @@ def vac_by_company(request, id):
     for vacancy in Vacancy.objects.values():
         if str(vacancy['company_id']) == str(id):
             tmp.append(vacancy)
-
-    if len(tmp) > 0:
-        return JsonResponse(tmp, safe=False, json_dumps_params={'indent': 2})
-
-    return JsonResponse({'error': 'Product not found'})
+    return JsonResponse(tmp, safe=False, json_dumps_params={'indent': 2})
 
 def vac_top_ten(request):
     vacancies = Vacancy.objects.values()

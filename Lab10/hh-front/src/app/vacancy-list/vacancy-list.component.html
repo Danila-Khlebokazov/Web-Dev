@@ -1,1 +1,7 @@
 <p>vacancy-list works!</p>
+
+<ul>
+  <li *ngFor="let vacancy of vacancies">
+    {{vacancy.id}} - {{vacancy.name}}
+  </li>
+</ul>
