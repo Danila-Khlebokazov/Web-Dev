@@ -1,7 +1,13 @@
 <p>vacancy-list works!</p>
+<fieldset>
+  <label>Vacancy name: </label>
+  <input type="text" [(ngModel)]="newVac">
+  <button (click)="addVacancy()">Add company</button>
+</fieldset>
 
 <ul>
   <li *ngFor="let vacancy of vacancies">
     {{vacancy.id}} - {{vacancy.name}}
+    <button (click)="deleteVacancy(vacancy.id)">Delete</button>
   </li>
 </ul>

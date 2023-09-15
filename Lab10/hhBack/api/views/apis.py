@@ -5,7 +5,7 @@ from api.models import Vacancy, Company
 
 
 # CRUD - CRATE, READ, UPDATE, DELETE
-from api.serializers import CompanySerializer, CompanySerializer2
+from api.serializers import CompanySerializer, CompanySerializer2, VacancySerializer
 
 
 @csrf_exempt
@@ -19,6 +19,8 @@ def companies_list(request):
         company_name = data.get('name', '')
         company = Company.objects.create(name=company_name)
         return JsonResponse(company.to_json())
+
+
 
 
 @csrf_exempt
@@ -42,27 +44,54 @@ def company_by_id(request, company_id):
         return JsonResponse({'deleted': True})
 
 
+@csrf_exempt
 def vacancies_list(request):
     # select * from auth_product;
-    vacancies = Vacancy.objects.all()
-    vacancies_json = [v.to_json() for v in vacancies]
-    return JsonResponse(vacancies_json, safe=False)
+    if request.method == 'GET':
+        vacancies = Vacancy.objects.all()
+        serializer = CompanySerializer(vacancies, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        vacancy_name = data.get('name', '')
+        vac_comp = Company.objects.get(data.get("company_id", 1))
+        vacancy = Company.objects.create(name=vacancy_name, company=vac_comp)
+        return JsonResponse(vacancy.to_json())
 
-
+@csrf_exempt
 def vacancy_by_id(request, vacancy_id):
     try:
         vacancy = Vacancy.objects.get(id=vacancy_id)
     except Vacancy.DoesNotExist as e:
         return JsonResponse({'error': str(e)}, status=400)
 
-    return JsonResponse(vacancy.to_json())
+    if request.method == 'GET':
+        return JsonResponse(vacancy.to_json())
+    elif request.method == 'PUT':
+        data = json.loads(request.body)
+        new_vac_name = data.get('name', vacancy.name)
+        # desc = data.get('desc', category.desc)
+        vacancy.name = new_vac_name
+        vacancy.save()
+        return JsonResponse(vacancy.to_json())
+    elif request.method == 'DELETE':
+        vacancy.delete()
+        return JsonResponse({'deleted': True})
 
+@csrf_exempt
 def vac_by_company(request, id):
-    tmp = []
-    for vacancy in Vacancy.objects.values():
-        if str(vacancy['company_id']) == str(id):
-            tmp.append(vacancy)
-    return JsonResponse(tmp, safe=False, json_dumps_params={'indent': 2})
+    if request.method == 'GET':
+        tmp = []
+        for vacancy in Vacancy.objects.values():
+            if str(vacancy['company_id']) == str(id):
+                tmp.append(vacancy)
+        return JsonResponse(tmp, safe=False)
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        vacancy_name = data.get('name', '')
+        vac_comp = Company.objects.get(id=data.get("company_id", id))
+        vacancy = Vacancy.objects.create(name=vacancy_name, company=vac_comp)
+        return JsonResponse(vacancy.to_json(), safe=False)
 
 def vac_top_ten(request):
     vacancies = Vacancy.objects.values()
